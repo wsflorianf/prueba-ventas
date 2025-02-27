@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Registrar Venta</h2>
+<div mat-dialog-content>
+  <form [formGroup]="ventaForm">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Vendedor</mat-label>
+      <mat-select formControlName="vendedorId">
+        <mat-option *ngFor="let vendedor of vendedores" [value]="vendedor.id">
+          {{ vendedor.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Producto</mat-label>
+      <mat-select formControlName="productoId">
+        <mat-option *ngFor="let producto of productos" [value]="producto.id">
+          {{ producto.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Fecha</mat-label>
+      <input matInput type="date" formControlName="fecha">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" formControlName="cantidad">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cerrar()">Cancelar</button>
+  <button mat-button color="primary" (click)="guardarVenta()" [disabled]="!ventaForm.valid">Guardar</button>
+</div>
