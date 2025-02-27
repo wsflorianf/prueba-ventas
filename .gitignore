@@ -1,0 +1,6 @@
+# Evitar subir archivos innecesarios
+node_modules/
+target/
+.DS_Store
+*.log
+.env
