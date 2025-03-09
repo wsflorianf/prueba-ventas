@@ -1,9 +1,9 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductoComponent } from './components/producto/producto.component';
-import { NgModule } from '@angular/core';
 import { VendedorComponent } from './components/vendedor/vendedor.component';
 import { VentaComponent } from './components/venta/venta.component';
+import { PruebaComponent } from './components/forms/prueba/prueba.component';
 
 export const routes: Routes = [{
     path: '',
@@ -22,12 +22,10 @@ export const routes: Routes = [{
     component: VentaComponent
 },
 {
+    path: 'prueba',
+    component: PruebaComponent
+},
+{
     path: '**',
     redirectTo: ''
 }];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule {}

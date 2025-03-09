@@ -48,11 +48,7 @@ export class NuevaVentaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.data);
-
-    this.data.vendedorId = this.data.vendedor.id;
-    this.data.productoId = this.data.producto.id;
+  ngOnInit(): void {   
 
     this.productoService.getProductos().subscribe((data) => {
       this.productos = data;
@@ -70,6 +66,9 @@ export class NuevaVentaComponent implements OnInit {
     });
 
     if (this.data) {
+      this.data.vendedorId = this.data.vendedor.id;
+      this.data.productoId = this.data.producto.id;
+      
       this.ventaForm.patchValue(this.data);
     }
   }
