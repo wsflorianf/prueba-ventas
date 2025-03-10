@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class BadRequestException extends RuntimeException{
 
+	@SuppressWarnings("unused")
 	private String message;
 	
 	public BadRequestException(String message) {
